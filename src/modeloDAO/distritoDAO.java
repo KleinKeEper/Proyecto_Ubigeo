@@ -1,9 +1,5 @@
 package modeloDAO;
 
-<<<<<<< HEAD
-public class distritoDAO {
-
-=======
 import interfaces.CRUD;
 import java.util.List;
 import modelo.Distrito;
@@ -12,7 +8,7 @@ public class distritoDAO implements CRUD {
 
     @Override
     public List listardistritos() {
-        
+
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -35,6 +31,5 @@ public class distritoDAO implements CRUD {
     public boolean eliminardistrito(int distrito) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
->>>>>>> d145b09c2df877b63a1bfbfac3cc30f29d7a0513
 }
+

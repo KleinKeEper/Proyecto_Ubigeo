@@ -12,40 +12,34 @@ import utils.leer;
  * @author CHRISTIAN
  */
 public class index {
-	
-	private static DepartamentoIndex departamentoIndex;
-	private static ProvinciaIndex provinciaIndex;
-	
-	
-	
-	public static void menu() {
-		System.out.println("1. Departamento");
-		System.out.println("2. Provincia");
-		System.out.println("3. Distrito");
-		System.out.println("4. Reporte");
-		System.out.println("5. Salir");
-	}
-	
-	public static void main(String[] args) {
-		int opcion;
-		
-		do {
-			menu();
-			System.out.print("Ingrese una opcion valida: ");
-			opcion = leer.entero();
-			switch (opcion) {
-			case 1:
-				departamentoIndex.menu();
-				break;
-			case 2:
-				provinciaIndex.listarProvincia();
-			default:
-				break;
-			}	
-		} while (opcion!=5);
-		
-	}
-	
-}
-    
 
+    private static ProvinciaIndex provinciaIndex;
+
+    public static void menu() {
+        System.out.println("1. Departamento");
+        System.out.println("2. Provincia");
+        System.out.println("3. Distrito");
+        System.out.println("4. Reporte");
+        System.out.println("5. Salir");
+    }
+
+    public static void main(String[] args) {
+        int opcion;
+
+        do {
+            menu();
+            System.out.print("Ingrese una opcion valida: ");
+            opcion = leer.entero();
+            switch (opcion) {
+                case 1:
+                    break;
+                case 2:
+                    provinciaIndex.listarProvincia();
+                default:
+                    break;
+            }
+        } while (opcion != 5);
+
+    }
+
+}
