@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfaces;
 
-/**
- *
- * @author CHRISTIAN
- */
+import java.util.List;
+import modelo.Distrito;
+
 public interface CRUD {
-    
+    public List listardistritos();
+    public Distrito buscardistrito(int distrito);
+    public boolean agregardistrito(Distrito distito);
+    public boolean editardistrito(Distrito distrito);
+    public boolean eliminardistrito(int distrito); 
 }
