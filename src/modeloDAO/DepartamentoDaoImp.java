@@ -1,7 +1,7 @@
 package modeloDAO;
 
 import config.bd.ConectaBd;
-import interfaces.CRUD_Departamento;
+import interfaces.DepartamentoDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import modelo.Departamento;
 
-public class DepartamentoDAO implements CRUD_Departamento {
+public class DepartamentoDaoImp implements DepartamentoDao {
 
     ConectaBd cn = new ConectaBd();
     Connection con;
@@ -20,7 +20,7 @@ public class DepartamentoDAO implements CRUD_Departamento {
     @Override
     public List listardepartamento() {
         ArrayList<Departamento> departamentos = new ArrayList<>();
-        String consulta = " select * from *********";
+        String consulta = " select * from departamento";
         try {
             con = cn.getConnection();
             pst = con.prepareStatement(consulta);
@@ -28,7 +28,7 @@ public class DepartamentoDAO implements CRUD_Departamento {
             while (rs.next()) {
                 Departamento departamento = new Departamento();
                 departamento.setIddepartamento(rs.getInt("iddepartamento"));
-                departamento.setNombre_departamento(rs.getString("Nombre Departamento"));
+                departamento.setNombre_departamento(rs.getString("nombre_departamento"));
                 departamentos.add(departamento);
             }
         } catch (Exception e) {
@@ -61,7 +61,7 @@ public class DepartamentoDAO implements CRUD_Departamento {
     @Override
     public boolean agregardepartamento(Departamento departamento) {
         String consulta = " insert into "
-                + "************ (nombre_departamento)"
+                + "departamento (nombre_departamento)"
                 + "values ('" + departamento.getNombre_departamento() + "'" + ")";
         System.out.println(consulta);
         try {
@@ -99,7 +99,7 @@ public class DepartamentoDAO implements CRUD_Departamento {
 
     @Override
     public boolean eliminardepartamento(int iddepartamento) {
-        String consulta = "delete from *************"
+        String consulta = "delete from departamento"
                 +" where iddepartamento = "+ iddepartamento;
         try{
             con = cn.getConnection();

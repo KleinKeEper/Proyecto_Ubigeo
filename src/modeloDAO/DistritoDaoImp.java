@@ -1,6 +1,6 @@
 package modeloDAO;
 
-import interfaces.CRUD;
+import interfaces.DistritoDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import config.bd.ConectaBd;
 import modelo.Distrito;
 import modelo.Provincia;
 
-public class distritoDAO implements CRUD {
+public class DistritoDaoImp implements DistritoDao {
 
 	ConectaBd cn = new ConectaBd();
     Connection con;

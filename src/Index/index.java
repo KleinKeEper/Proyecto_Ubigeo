@@ -14,6 +14,7 @@ import utils.leer;
 public class index {
 
     private static ProvinciaIndex provinciaIndex;
+    private static DepartamentoIndex departamentoIndex;
 
     public static void menu() {
         System.out.println("1. Departamento");
@@ -31,10 +32,10 @@ public class index {
             System.out.print("Ingrese una opcion valida: ");
             opcion = leer.entero();
             switch (opcion) {
-                case 1:
+                case 1:departamentoIndex.menuDepartamento();;
                     break;
                 case 2:
-                    provinciaIndex.listarProvincia();
+                    provinciaIndex.menuProvincia();
                 default:
                     break;
             }

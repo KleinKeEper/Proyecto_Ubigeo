@@ -53,7 +53,20 @@ public class ProvinciaDaoImp implements ProvinciaDao{
 	@Override
 	public boolean agregarProvinvia(Provincia provincia) {
 		// TODO Auto-generated method stub
-		return false;
+		String consulta = " insert into "
+                + "provincia (nombre_provincia, iddepartamento)"
+                + "values ('" + provincia.getNombre_provincia() + "' ," + provincia.getIddepartamento() + ")";
+
+        try {
+            con = cn.getConnection();
+            pst = con.prepareStatement(consulta);
+            pst.executeUpdate();
+        } catch (Exception error) {
+            System.out.println("Error: Problemas Insert Provincias");
+            System.out.println(error.getMessage());
+            return false;
+        }
+        return true;
 	}
 
 	@Override
@@ -65,7 +78,18 @@ public class ProvinciaDaoImp implements ProvinciaDao{
 	@Override
 	public boolean eliminarProvincia(int id) {
 		// TODO Auto-generated method stub
-		return false;
+		  String consulta = "delete from provincia"
+	                +" where idprovincia = "+ id;
+	        try{
+	            con = cn.getConnection();
+	            pst = con.prepareStatement(consulta);
+	            pst.executeUpdate();
+	        } catch(Exception error){
+	            System.out.println("Error: Problemas con el ELIMINAR PROVINCIA");
+	            System.out.println(error.getMessage());
+	            return false;
+	        }
+	        return true;
 	}
 
 }

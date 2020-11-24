@@ -3,7 +3,7 @@ package interfaces;
 import java.util.List;
 import modelo.Departamento;
 
-public interface CRUD_Departamento {
+public interface DepartamentoDao {
     
     public List listardepartamento();
     public Departamento buscardepartamento(int iddepartamento);

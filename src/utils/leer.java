@@ -19,5 +19,10 @@ public class leer {
     public static char letra(){
         return cadena().charAt(0);
     }
+    public static void saltoLinea(int i) {
+		for (int j = 0; j < 1; j++) {
+			System.out.println();
+		}
+	}
 
 }

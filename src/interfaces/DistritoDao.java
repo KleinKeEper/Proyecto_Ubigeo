@@ -3,7 +3,7 @@ package interfaces;
 import java.util.List;
 import modelo.Distrito;
 
-public interface CRUD {
+public interface DistritoDao {
 
     public List listardistritos();
 
